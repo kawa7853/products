@@ -1,7 +1,7 @@
 import os #operating system
 
 products = []
-if os.path.isfile("products.csv"):
+if os.path.isfile("products.csv"): #檢察檔案在不在
 	print("有檔案！")
 	with open("products.csv","r", encoding="utf-8") as f:
 	for line in f:
