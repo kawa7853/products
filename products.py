@@ -1,7 +1,9 @@
- # 讀取
-products = []
+import os #operating system
 
-with open("products.csv","r", encoding="utf-8") as f:
+products = []
+if os.path.isfile("products.csv"):
+	print("有檔案！")
+	with open("products.csv","r", encoding="utf-8") as f:
 	for line in f:
 		if "商品,價格" in line:
 			continue #不逃出迴圈繼續跑
@@ -11,8 +13,8 @@ with open("products.csv","r", encoding="utf-8") as f:
 		price = s[1]
 		#name, price = line.split().split(",")
 		products.append([name,price])
-
-
+else:
+	print("找不到...")
 
 #輸入
 while True:
